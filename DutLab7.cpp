@@ -73,8 +73,9 @@ void pz2_10()
 
 int main()
 {
+    pz2_6();
+    pz2_7();
     pz2_10();
-
     return 0;
 }
 
