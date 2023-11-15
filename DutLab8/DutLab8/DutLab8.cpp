@@ -44,8 +44,17 @@ void lab8_1()
 
 void lab8_2()
 {
-    int n[] = { 5, -5, -4, 3, -6, 2, -10, -8 };
-    int maxIndex = sizeof(n) / sizeof(n[0]);
+    int n[] = {-1, -2,6, -3, 2, -4, -5, 5};
+    int size = sizeof(n) / sizeof(n[0]);
+    int max = n[0];
+    int maxIndex = 0;
+
+    for (int i = 0; i < size; i++) {
+        if (n[i] > max) {
+            max = n[i];
+            maxIndex = i;
+        }
+    }
 
     for (int i = 0; i < maxIndex; i++) {
         if (n[i] < 0) {
@@ -55,7 +64,7 @@ void lab8_2()
 
     cout << "New array: ";
 
-    for (int i = 0; i < maxIndex; i++) {
+    for (int i = 0; i < size; i++) {
         cout << n[i] << ", ";
     }
 }

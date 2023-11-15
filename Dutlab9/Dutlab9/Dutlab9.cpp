@@ -3,7 +3,7 @@ using namespace std;
 
 void lab9_3()
 {
-    int n[] = { 12, 94, 1200, 834, 1 };
+    int n[] = { 12, 1, 1200, 834, 1 };
     int size = sizeof(n) / sizeof(n[0]);
     int max = n[0];
     int min = n[0];
@@ -47,6 +47,7 @@ void lab9_4()
     cin >> a;
 
     int count = 0;
+
     for (int i = 0; i < size; i++) {
         if (n[i] > a) {
             count++;
@@ -69,7 +70,7 @@ void lab9_5()
         }
     }
 
-    auto newN = remove(begin(n), end(n), max);
+    remove(begin(n), end(n), max);
 
     for (int i = 1; i < size; i++) {
         if (n[i] > newMax) {
