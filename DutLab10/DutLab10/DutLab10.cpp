@@ -142,19 +142,50 @@ void lab10_6()
 
 void lab10_15()
 {
-    int n[3][3] = {
+    const int row = 3, colum = 3;
+    int n[row][colum] = {
         {1, 2, 3},
         {6, 7, 8},
         {1, 2, 3}};
     int sum1 = 0;
     int sum2 = 0;
 
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < row; ++i) {
         sum1 += n[i][i];
     }
 
-    for (int i = 0; i < 3; ++i) {
-        sum2 += n[i][2 - i];
+    for (int i = 0; i < row; ++i) {
+        sum2 += n[i][ colum - 1 - i];
+    }
+    int sum = sum1 + sum2;
+
+    cout << "In sum of the diagonal is " << sum << endl;
+    
+
+    cout << endl;
+}
+
+void lab10_15_2()
+{
+    const int row = 4, colum = 4;
+    int sum1 = 0;
+    int sum2 = 0;
+    int n[row][colum];
+    srand(time(nullptr));
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < colum; j++) {
+            n[i][j] = rand() % 10;
+            cout << "\t" << n[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    for (int i = 0; i < row; ++i) {
+        sum1 += n[i][i];
+    }
+
+    for (int i = 0; i < row; ++i) {
+        sum2 += n[i][ colum - 1 - i];
     }
 
     cout << "In sum of the first diagonal is " << sum1 << endl;
@@ -165,12 +196,7 @@ void lab10_15()
 
 int main()  
 { 
-    lab10_1();
-    lab10_2();
-    lab10_3();
-    lab10_4();
-    lab10_5();
-    lab10_6();
     lab10_15();
+    lab10_15_2();
     return 0;
 }  
